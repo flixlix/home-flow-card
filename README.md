@@ -238,18 +238,18 @@ the car is away.
 `car.visibility` and `car.idle` take the conditions of a card's visibility tab, and the editor sets
 them up the same way:
 
-| `condition`     | Options                                              |
-| --------------- | ---------------------------------------------------- |
-| `state`         | `entity`, `state` or `state_not` (a value or a list) |
-| `numeric_state` | `entity`, `above`, `below`                           |
-| `screen`        | `media_query`                                        |
-| `user`          | `users` (user ids)                                   |
-| `time`          | `after`, `before`, `weekdays`                        |
-| `location`      | `locations` (`home`, `not_home` or zones)            |
-| `and`, `or`     | `conditions`                                         |
-| `not`           | `conditions`, passes unless all of them hold         |
+| `condition`     | Options                                                                                   |
+| --------------- | ----------------------------------------------------------------------------------------- |
+| `state`         | `entity`, `state` or `state_not` (a value or a list)                                      |
+| `numeric_state` | `entity`, `above`, `below`                                                                |
+| `screen`        | `media_query`                                                                             |
+| `user`          | `users` (user ids)                                                                        |
+| `time`          | `after`, `before`, `weekdays`                                                             |
+| `location`      | `target` (zones), `match_mode`, `away`; or `locations` (`home`, `not_home` or zone names) |
+| `and`, `or`     | `conditions`                                                                              |
+| `not`           | `conditions`, passes unless all of them hold                                              |
 
-Template, sun, zone and device conditions need Home Assistant itself and are ignored.
+Since Home Assistant 2026.10 its editor writes `state` and `numeric_state` with `entity_id`, as automations do, and offers template, sun, zone and device conditions, which Home Assistant checks for the card. Before 2026.10 those are ignored.
 
 ### Actions
 
